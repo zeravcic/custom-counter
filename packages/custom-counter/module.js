@@ -1,4 +1,5 @@
 const { resolve, join } = require('path')
+const { readdirSync } = require('fs')
 
 export default function (moduleOptions) {
   // get all options for the module
@@ -13,13 +14,34 @@ export default function (moduleOptions) {
   }
   const { namespace } = options
 
-  // add the debug plugin
-  this.addPlugin({
-    src: resolve(__dirname, 'debug.js'),
-    // ** NOTE: we now use namespace here: **
-    fileName: join(namespace, 'debug.js'),
-    options // just pass through the options object
-  })
+  // add all of the initial plugins
+  const pluginsToSync = [
+    'components/index.js',
+    'store/index.js',
+    'plugins/index.js',
+    'debug.js',
+    'middleware/index.js'
+  ]
+  for (const pathString of pluginsToSync) {
+    this.addPlugin({
+      src: resolve(__dirname, pathString),
+      fileName: join(namespace, pathString),
+      options
+    })
+  }
+
+  // sync all of the files and folders to revelant places in the nuxt build dir (.nuxt/)
+  const foldersToSync = ['plugins/helpers', 'store/modules', 'components/lib']
+  for (const pathString of foldersToSync) {
+    const path = resolve(__dirname, pathString)
+    for (const file of readdirSync(path)) {
+      this.addTemplate({
+        src: resolve(path, file),
+        fileName: join(namespace, pathString, file),
+        options
+      })
+    }
+  }
 }
 
 module.exports.meta = require('./package.json')
