@@ -1,16 +1,27 @@
 {
-  "name": "@testing/custom-counter",
+  "name": "bytenet-custom-counter-7",
   "version": "0.1.0",
-  "description": "> TODO: description",
+  "description": "Nuxt module tutorials and testing",
   "author": "Nikola Zeravcic <support@bytenet.rs>",
-  "homepage": "",
-  "license": "ISC",
+  "homepage": "https://github.com/zeravcic/custom-counter#readme",
+  "license": "MIT",
+  "repository": "https://github.com/zeravcic/custom-counter/tree/master/packages/custom-counter",
+  "bugs": {
+    "url": "https://github.com/zeravcic/custom-counter/issues"
+  },
+  "keywords": [
+    "counter",
+    "nuxtjs",
+    "module",
+    "test"
+  ],
   "main": "module.js",
   "files": [
     "components",
     "middleware",
     "plugins",
-    "store"
+    "store",
+    "debug.js"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
