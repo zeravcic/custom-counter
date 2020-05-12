@@ -10,16 +10,16 @@ export default ({ store }, inject) => {
   const { state } = store
   // inject an object of functions into the app
   inject(namespace, {
-    value() {
+    value () {
       return helpers.value({ state, namespace })
     },
-    adjust(adjustment) {
+    adjust (adjustment) {
       return helpers.adjust({ state, store, namespace, adjustment })
     },
-    log() {
+    log () {
       return helpers.log({ state, namespace })
     },
-    message(string) {
+    message (string) {
       return helpers.message({ namespace, string })
     }
   })
