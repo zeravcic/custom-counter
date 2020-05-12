@@ -2,5 +2,10 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "version": {
+      "message": "publish: cut the %s release"
+    }
+  },
   "version": "0.2.1"
 }
