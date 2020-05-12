@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/zeravcic/custom-counter/compare/v0.2.1...v0.2.2) (2020-05-12)
+
+
+### Bug Fixes
+
+* **compiler-cli:** added support for version messages ([099cfff](https://github.com/zeravcic/custom-counter/commit/099cfffc789ea37015ec9922b4803b4e021c34cb))
+
+
+
+
+
 ## [0.2.1](https://github.com/zeravcic/custom-counter/compare/v0.2.0...v0.2.1) (2020-05-12)
 
 **Note:** Version bump only for package root
